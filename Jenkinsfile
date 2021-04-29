@@ -11,7 +11,7 @@ pipeline {
           }
         stage('Build Stages') {
             steps {
-                sh 'packer build -var \"access_key=${access_key}\"  -var \"access_key=${secret_key}\" apache.json'
+                sh 'packer.io build   apache.json'
          }
         } 
        }
