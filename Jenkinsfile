@@ -1,6 +1,11 @@
 pipeline {
     agent any
     
+     environment {
+        access_key = ''
+        secret_key = 'input_your_secret_key'
+    }
+    
     
     stages {
         stage('Git Checkout'){
