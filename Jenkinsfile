@@ -15,7 +15,7 @@ pipeline {
       AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }       
             steps {
-                sh 'packer build apache.json'
+                sh 'packer build -var AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID') -var       AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY') apache.json'
          }
         } 
        }
