@@ -9,11 +9,6 @@ pipeline {
                }
 
           }
-        stage('test AWS credentials') {
-            steps {
-                withAWS(credentials: 'aws-cred')
-            }   
-        }        
         stage('Build Stages') {
             steps {
                 sh 'packer build apache.json'
