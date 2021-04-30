@@ -10,7 +10,7 @@ pipeline {
           }
         stage('Build Stages') {
             steps {
-                sh  'packer build  apache.json'                   
+                sh  '/usr/bin/packer build  apache.json'                   
          }
         } 
        }
