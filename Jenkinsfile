@@ -11,7 +11,12 @@ pipeline {
           }
         stage('Build Stages') {
             steps {
-                sh 'packer build -var aws_access_key=${AWS_KEY}  -var aws_secret_key=${AWS_SECRET}   apache.json'
+                script {
+                  withCredentials([file(credentialsId: 'my-key', variable: ' SSH_PRIVATE_KEY'
+                      sh """
+                        packer build   apache.json'
+                                        
+           }                             
          }
         } 
        }
