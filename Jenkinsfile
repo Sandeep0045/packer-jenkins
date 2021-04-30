@@ -1,12 +1,5 @@
 pipeline {
     agent any
-    environment {
-        aws_access_key = "${AWS_KEY}"
-        aws_secret_key = "${AWS_SECRET}"
-
-        
-    }
-    
     
     stages {
         stage('Git Checkout'){
@@ -17,7 +10,7 @@ pipeline {
           }
         stage('Build Stages') {
             steps {
-                sh  '/usr/bin/packer build  apache.json'                   
+                sh  'packer build  apache.json'                   
          }
         } 
        }
