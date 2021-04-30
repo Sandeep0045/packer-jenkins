@@ -1,6 +1,9 @@
 pipeline {
     agent any
     environment {
+        aws_access_key = ${AWS_KEY}
+        aws_secret_key = ${AWS_SECRET}
+
         
     
     
@@ -14,7 +17,7 @@ pipeline {
           }
         stage('Build Stages') {
             steps {
-                sh  'packer build   apache.json'                   
+                sh  'packer build  -var "aws_access_key=${AWS_KEY}" -var "aws_secret_key = ${AWS_SECRET}" apache.json'                   
          }
         } 
        }
