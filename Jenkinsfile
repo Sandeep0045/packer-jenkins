@@ -5,7 +5,7 @@ pipeline {
         aws_secret_key = \"${AWS_SECRET}\"
 
         
-    
+    }
     
     
     stages {
