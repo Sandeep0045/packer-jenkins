@@ -12,7 +12,7 @@ pipeline {
         stage('Build Stages') {
             steps {
                 script {
-                  withCredentials([file(credentialsId: 'my-key', variable: ' SSH_PRIVATE_KEY'
+                  withCredentials([file(credentialsId: 'my-key', variable: ' SSH_PRIVATE_KEY')]) {
                       sh """
                         packer build   apache.json'
                        """
