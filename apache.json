@@ -1,7 +1,8 @@
 {
   "variables": {
-    "aws_access_key": "",
-    "aws_secret_key": ""
+    "aws_access_key": "{{env 'AWS_KEY' }}"
+    "aws_secret_key": "{{env 'AWS_SECRET' }}"
+    "ssh_private_key": "{{env 'SSH_PRIVATE_KEY' }}"
     
   },
   "builders": [
@@ -11,6 +12,7 @@
       "source_ami": "ami-0f57b4cec24530068",
       "instance_type": "t2.micro",
       "ssh_username": "ec2-user",
+      "ssh_priavte_key_file" : "{{user 'ssh_private_key'}}"
       "ami_name": "apache-ami-packer-{{timestamp}}"
     }
   ],
